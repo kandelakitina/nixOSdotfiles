@@ -25,7 +25,7 @@
     nixosConfigurations = {
       # replace with your hostname
       nixos = lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        # specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         # system = "x86_64-linux";
         inherit system;
