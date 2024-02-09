@@ -1,7 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
+{ inputs,
   lib,
   config,
   pkgs,
@@ -38,15 +37,18 @@
     };
   };
 
-  # TODO: Set your username
+  # Set your username
   home = {
     username = "boticelli";
     homeDirectory = "/home/boticelli";
   };
 
-  # Add stuff for your user as you see fit:
+  # TODO: Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
+
+  # Fish shell
+  programs.fish.enable = true;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

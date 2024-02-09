@@ -29,6 +29,14 @@
     };
   };
 
+  # SHELL
+  environment.shells = with pkgs; [
+    bash
+    fish
+  ];
+  users.defaultUser.shell = pkgs.fish;
+  programs.fish.enable = true;
+
   # networking
   networking = {
     networkmanager.enable = true;
@@ -156,7 +164,7 @@
       experimental-features = nix-command flakes
     '';
   };
-  
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 }
