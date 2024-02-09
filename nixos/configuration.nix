@@ -142,13 +142,21 @@
     config.nix.registry;
 
   # FLAKES SUPPORT
-  nix.settings = {
-    # Enable flakes and new 'nix' command
-    experimental-features = "nix-command flakes";
-    # Deduplicate and optimize nix store
-    auto-optimise-store = true;
-  };
+  # nix.settings = {
+  #   # Enable flakes and new 'nix' command
+  #   experimental-features = "nix-command flakes";
+  #   # Deduplicate and optimize nix store
+  #   auto-optimise-store = true;
+  # };
 
+  # Same but in different syntax
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+  
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 }
