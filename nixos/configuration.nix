@@ -34,7 +34,7 @@
     bash
     fish
   ];
-  users.defaultUser.shell = pkgs.fish;
+  
   programs.fish.enable = true;
 
   # networking
@@ -82,6 +82,7 @@
       initialPassword = "123";
       createHome = true;
       isNormalUser = true;
+      shell = pkgs.fish;
       openssh.authorizedKeys.keys = [
         # "..."
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
