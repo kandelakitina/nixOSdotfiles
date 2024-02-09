@@ -70,7 +70,6 @@
 
   # audio
   sound.enable = true;
-  nixpkgs.config.pulseaudio = true;
   hardware.pulseaudio.enable = true;
 
   # USERS
@@ -119,6 +118,7 @@
   nixpkgs = {
     # Configure your nixpkgs instance
     config = {
+      pulseaudio = true;
       allowUnfree = true;
     };
 
